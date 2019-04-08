@@ -1,0 +1,2 @@
+# StringHelper
+PHP string helper
