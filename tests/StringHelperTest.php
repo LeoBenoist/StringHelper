@@ -89,6 +89,13 @@ class StringHelperTest extends TestCase
         $this->assertEquals('fix', StringHelper::removePrefix('pre#fix', '#'));
     }
 
+    public function testRemoveSuffix()
+    {
+        $this->assertEquals('pre', StringHelper::removeSuffix('pre-fix'));
+        $this->assertEquals('pre-bla', StringHelper::removeSuffix('pre-bla-fix'));
+        $this->assertEquals('pre', StringHelper::removeSuffix('pre#fix', '#'));
+    }
+
     public function testStringContains()
     {
         $this->assertTrue(StringHelper::contains('It is better to offer no excuse than a bad one.', 'better'));

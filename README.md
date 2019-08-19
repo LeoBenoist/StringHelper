@@ -107,6 +107,15 @@ Result: `fix`
 ```
 Result: `fix`
 
+### StringHelper::removeSuffix(string $haystack, string $separator = '-')
+```php
+    use LeoBenoist\StringHelper\StringHelper;
+
+    StringHelper::removeSuffix('pre-fix');
+    StringHelper::removeSuffix('pre#fix', '#');
+```
+Result: `pre`
+
 ### StringHelper::stringContains(string $haystack, string $needle)
 ```php
     use LeoBenoist\StringHelper\StringHelper;

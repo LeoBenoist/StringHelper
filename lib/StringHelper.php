@@ -138,6 +138,20 @@ abstract class StringHelper
 
     /**
      * @param string $haystack
+     * @param string $separator
+     *
+     * @return string
+     */
+    public static function removeSuffix(string $haystack, string $separator = '-')
+    {
+        $explodedRight = explode($separator, $haystack);
+        array_pop($explodedRight);
+
+        return implode($separator, $explodedRight);
+    }
+
+    /**
+     * @param string $haystack
      * @param string $needle
      *
      * @return bool
