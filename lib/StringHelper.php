@@ -130,6 +130,10 @@ abstract class StringHelper
      */
     public static function removePrefix(string $haystack, string $separator = '-')
     {
+        if (!static::contains($haystack, $separator)) {
+            return $haystack;
+        }
+
         $explodedRight = explode($separator, $haystack);
         array_shift($explodedRight);
 
@@ -144,6 +148,10 @@ abstract class StringHelper
      */
     public static function removeSuffix(string $haystack, string $separator = '-')
     {
+        if (!static::contains($haystack, $separator)) {
+            return $haystack;
+        }
+
         $explodedRight = explode($separator, $haystack);
         array_pop($explodedRight);
 
@@ -163,7 +171,7 @@ abstract class StringHelper
 
     public static function getStringBetween(string $haystack, string $start, string $end): string
     {
-        $haystack = ' '.$haystack;
+        $haystack = ' ' . $haystack;
         $ini = strpos($haystack, $start);
         if ($ini == 0) {
             return '';
